@@ -18,22 +18,23 @@ public class RegistrationWithPageObjectTests extends TestBase{
                         .setEmail("amtrsv@yandex.ru")
                         .setGender("Male")
                         .setUserNumber("9778384180")
-                        .setDateOfBirth("17", "November", "1994")
+                        .setDateOfBirth("18", "January", "2000")
                         .setSubjectsInput("Commerce")
                         .setHobbiesCheckbox("Sports")
-                        .loadPictureInput()
+                        .loadPictureInput("amtrsv32.png")
                         .setCurrentAddress("Moscow")
                         .setState("Haryana")
                         .setCity("Karnal")
                         .setClickButton()
+                        .tableVisible()
                         .resultCheck("Student Name", "Andrey Matrosov")
                         .resultCheck("Student Email", "amtrsv@yandex.ru")
                         .resultCheck("Gender", "Male")
                         .resultCheck("Mobile", "9778384180")
-                        .resultCheck("Date of Birth", "17 November,1994")
+                        .resultCheck("Date of Birth", "18 January,2000")
                         .resultCheck("Subjects", "Commerce")
                         .resultCheck("Hobbies", "Sports")
-                        .resultCheck("Picture", "amtrsv.png")
+                        .resultCheck("Picture", "amtrsv32.png")
                         .resultCheck("Address", "Moscow")
                         .resultCheck("State and City", "Haryana Karnal");
 
@@ -54,6 +55,8 @@ public class RegistrationWithPageObjectTests extends TestBase{
                         .setHobbiesCheckbox("Sports")
                         .setCurrentAddress("Moscow")
                         .setClickButton()
+                        .tableVisible()
+
                 .resultCheck("Student Name", "Andrey Matrosov")
                 .resultCheck("Gender", "Male")
                 .resultCheck("Mobile", "9778384180")
@@ -67,6 +70,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
     void checkFormRegistrationEmptyFields() {
         registrationPage.openPage()
                         .closeAd()
-                        .setClickButton();
+                        .setClickButton()
+                        .tableHidden();
     }
 }

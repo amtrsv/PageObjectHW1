@@ -4,6 +4,8 @@ import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 import pages.components.FormResultComponent;
 
+import static com.codeborne.selenide.Condition.hidden;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
@@ -21,7 +23,10 @@ public class StudentRegistrationPage {
             currentAddressInput = $("#currentAddress"),
             stateInput = $("#react-select-3-input"),
             cityInput = $("#react-select-4-input"),
-            buttonSubmit = $("#submit");
+            buttonSubmit = $("#submit"),
+            checkTableIsVivsible = $(".table-responsive"),
+            checkTableIsHidden = $(".table-responsive");
+
 
 
     CalendarComponent calendarComponent = new CalendarComponent();
@@ -85,8 +90,8 @@ public class StudentRegistrationPage {
 
     }
 
-    public StudentRegistrationPage loadPictureInput() {
-        loadPicture.uploadFromClasspath("amtrsv.png");
+    public StudentRegistrationPage loadPictureInput(String classpath) {
+        loadPicture.uploadFromClasspath(classpath);
         return this;
     }
 
@@ -104,13 +109,26 @@ public class StudentRegistrationPage {
         stateInput.val(value).pressEnter();
         return this;
     }
+
     public StudentRegistrationPage resultCheck(String key, String value) {
         formResult.resultCheck(key, value);
 
         return this;
     }
+
     public StudentRegistrationPage setClickButton() {
         buttonSubmit.click();
-    return this;
+        return this;
     }
+
+    public StudentRegistrationPage tableVisible() {
+        checkTableIsVivsible.shouldBe(visible);
+
+        return this;
     }
+    public void tableHidden() {
+        checkTableIsHidden.shouldBe(hidden);
+
+}
+    }
+
