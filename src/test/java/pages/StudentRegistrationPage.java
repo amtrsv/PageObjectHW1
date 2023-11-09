@@ -24,9 +24,7 @@ public class StudentRegistrationPage {
             stateInput = $("#react-select-3-input"),
             cityInput = $("#react-select-4-input"),
             buttonSubmit = $("#submit"),
-            checkTableIsVivsible = $(".table-responsive"),
-            checkTableIsHidden = $(".table-responsive");
-
+            checkTable = $(".table-responsive");
 
 
     CalendarComponent calendarComponent = new CalendarComponent();
@@ -122,12 +120,12 @@ public class StudentRegistrationPage {
     }
 
     public StudentRegistrationPage tableVisible() {
-        checkTableIsVivsible.shouldBe(visible);
+        checkTable.shouldBe(visible);
 
         return this;
     }
     public void tableHidden() {
-        checkTableIsHidden.shouldBe(hidden);
+        checkTable.shouldBe(hidden);
 
 }
     }
