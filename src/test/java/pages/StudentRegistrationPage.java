@@ -127,6 +127,7 @@ public class StudentRegistrationPage {
     public void tableHidden() {
         checkTable.shouldBe(hidden);
 
-}
     }
+
+}
 
