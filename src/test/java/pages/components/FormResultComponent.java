@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class FormResultComponent {
 
-    private static final SelenideElement CHECK_RESULT = $(".table-responsive");
+    private final SelenideElement CHECK_RESULT = $(".table-responsive");
     public void resultCheck(String key, String value){
         CHECK_RESULT.$(byText(key)).parent().shouldHave(text(value));
     }
