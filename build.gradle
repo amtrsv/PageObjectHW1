@@ -47,7 +47,7 @@ tasks.withType(Test) {
         }
     }
 }
-tasks.register('demoqa_test', Test) {
+tasks.register('WEB', Test) {
     useJUnitPlatform {
         includeTags("WEB")
     }
