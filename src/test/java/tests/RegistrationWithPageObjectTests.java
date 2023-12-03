@@ -1,5 +1,7 @@
 package tests;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.StudentRegistrationPage;
 
@@ -9,6 +11,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
 
     @Test
     @DisplayName("Проверка формы на ввод всех полей")
+    @Tag("WEB")
     void checkFormRegistration(){
         registrationPage.openPage()
                         .closeAd()
@@ -42,6 +45,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
 
     @Test
     @DisplayName("Проверка формы на ввод обязательных полей")
+    @Tag("WEB")
     void checkFormRegistrationRequiredFields(){
 
         registrationPage.openPage()
@@ -66,6 +70,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
 
     @Test
     @DisplayName("Проверка отправки пустой формы")
+    @Tag("WEB")
     void checkFormRegistrationEmptyFields() {
         registrationPage.openPage()
                         .closeAd()

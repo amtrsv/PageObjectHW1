@@ -5,7 +5,7 @@ import java.util.Locale;
 public class TestData {
     Faker faker = new Faker(new Locale("ru"));
     Faker fakerEN = new Faker(new Locale("en"));
-    public static Faker fakerRandomCity = new Faker();
+    public Faker fakerRandomCity = new Faker();
 
     public String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
@@ -22,7 +22,7 @@ public class TestData {
             state = faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan"),
             city = setRandomCity(state);
 
-    public static String setRandomCity(String state) {
+    public String setRandomCity(String state) {
 
         return switch (state) {
             case "NCR" -> fakerRandomCity.options().option("Delphi", "Gurgaon", "Noida");
