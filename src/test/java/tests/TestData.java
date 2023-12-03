@@ -24,14 +24,17 @@ public class TestData {
 
     public String setRandomCity(String state) {
 
-        return switch (state) {
-            case "NCR" -> fakerRandomCity.options().option("Delphi", "Gurgaon", "Noida");
-            case "Utar Pradesh" -> fakerRandomCity.options().option("Agra", "Lucknow", "Merrut");
-            case "Haryana" -> fakerRandomCity.options().option("Karnal", "Panipat");
-            case "Rajastan" -> fakerRandomCity.options().option("Jaipur", "Jaiselmer");
-            default -> (state);
-        };
-
+        switch (state) {
+            case "NCR":
+                return fakerRandomCity.options().option("Delphi", "Gurgaon", "Noida");
+            case "Utar Pradesh":
+                return fakerRandomCity.options().option("Agra", "Lucknow", "Merrut");
+            case "Haryana":
+                return fakerRandomCity.options().option("Karnal", "Panipat");
+            case "Rajastan":
+                return fakerRandomCity.options().option("Jaipur", "Jaiselmer");
+            default:
+                return state;
+        }
     }
-
 }

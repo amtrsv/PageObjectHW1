@@ -49,6 +49,12 @@ tasks.withType(Test) {
 }
 tasks.register('WEB', Test) {
     useJUnitPlatform {
+      includeTags("WEB")
+    }
+
+}
+tasks.register('PO', Test) {
+    useJUnitPlatform {
         includeTags("WEB")
     }
 }
