@@ -14,7 +14,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
     @DisplayName("Проверка формы на ввод всех полей")
     @Tag("WEB")
     void checkFormRegistration() {
-        step("Открываем страрницу", () -> {
+        step("Открываем страницу", () -> {
             registrationPage.openPage();
         });
         step("Заполняем все поля", () -> {
@@ -55,13 +55,11 @@ public class RegistrationWithPageObjectTests extends TestBase{
     @DisplayName("Проверка формы на ввод обязательных полей")
     @Tag("WEB")
     void checkFormRegistrationRequiredFields(){
-
-
-        step("Открываем страрницу", () -> {
+        step("Открываем страницу", () -> {
             registrationPage.openPage();
         });
 
-        step("Открываем страрницу", () -> {
+        step("Открываем страницу", () -> {
 
             registrationPage.closeAd();
             registrationPage
@@ -92,11 +90,11 @@ public class RegistrationWithPageObjectTests extends TestBase{
     @Tag("WEB")
     void checkFormRegistrationEmptyFields() {
 
-        step("Открываем страрницу", () -> {
+        step("Открываем страницу", () -> {
             registrationPage.openPage();
         });
 
-        step("Открываем страрницу", () -> {
+        step("Закрываем рекламу", () -> {
 
             registrationPage.closeAd();
         });
