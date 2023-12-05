@@ -59,7 +59,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
             registrationPage.openPage();
         });
 
-        step("Открываем страницу", () -> {
+        step("Закрываем рекламу", () -> {
 
             registrationPage.closeAd();
             registrationPage
