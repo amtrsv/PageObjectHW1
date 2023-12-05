@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.StudentRegistrationPage;
 
+
 public class RegistrationWithRandomDataTests extends TestBase {
     StudentRegistrationPage registrationPage = new StudentRegistrationPage();
     TestData testData = new TestData();
@@ -11,6 +12,7 @@ public class RegistrationWithRandomDataTests extends TestBase {
     @Test
     @Tag("PO")
     @DisplayName("Проверка формы на ввод всех полей")
+
     void checkFormRegistration() {
 
 
@@ -41,7 +43,7 @@ public class RegistrationWithRandomDataTests extends TestBase {
                 .resultCheck("Address", testData.currentAddress)
                 .resultCheck("State and City", testData.state + " " + testData.city);
 
-    }
+        }
 
     @Test
     @Tag("PO")
